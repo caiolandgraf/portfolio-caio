@@ -1,0 +1,57 @@
+---
+title: "Laravel Architecture Patterns for Scale"
+slug: "laravel-architecture-patterns-for-scale"
+description: "Practical patterns for structuring Laravel applications that grow without becoming unmaintainable."
+cover: "/images/blog/laravel-cover.png"
+date: "2024-11-10"
+tags: ["Laravel", "PHP", "Architecture", "DDD"]
+author: "Caio Landgraf"
+published: true
+---
+
+After years of building Laravel applications at EiCode, I've refined a set of patterns that keep codebases maintainable as they scale.
+
+## Layer your application
+
+Separate HTTP concerns from business logic:
+
+```
+app/
+├── Http/Controllers/    # Thin controllers
+├── Services/            # Business logic
+├── Repositories/        # Data access
+├── DTOs/                # Data contracts
+└── Domain/              # Core domain models
+```
+
+## Use DTOs at boundaries
+
+Never pass raw request arrays into services. Define explicit DTOs:
+
+```php
+final readonly class CreateUserDTO
+{
+    public function __construct(
+        public string $name,
+        public string $email,
+    ) {}
+}
+```
+
+## Queue everything slow
+
+Email, notifications, and external API calls belong in queues. Your HTTP response time should never depend on a third-party service.
+
+## Domain events for decoupling
+
+When one action triggers multiple side effects, use domain events instead of direct coupling:
+
+```php
+event(new UserRegistered($user));
+```
+
+Each listener handles one concern. Adding new behavior means adding a listener, not modifying existing code.
+
+## Conclusion
+
+Architecture is about constraints that make the right thing easy. These patterns have served me well across dozens of production Laravel projects.

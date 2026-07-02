@@ -1,0 +1,49 @@
+---
+title: "Building Production-Ready Go Applications with Grove"
+slug: "building-production-ready-go-applications-with-grove"
+description: "How Grove scaffolds structured, observable Go applications with GORM, Fuego, and Atlas migrations."
+cover: "/images/blog/grove-cover.png"
+date: "2025-06-15"
+tags: ["Go", "CLI", "Architecture"]
+author: "Caio Landgraf"
+published: true
+---
+
+Building Go applications from scratch often leads to inconsistent project structures, ad-hoc migration workflows, and scattered HTTP routing. Grove addresses this by providing an opinionated foundation for production-ready services.
+
+## Why structure matters
+
+When every service follows a different layout, onboarding becomes expensive. Grove enforces a layered architecture that separates concerns clearly:
+
+- **Models** — domain entities with GORM
+- **Controllers** — HTTP handlers with automatic OpenAPI
+- **DTOs** — request/response contracts
+- **Middlewares** — cross-cutting concerns
+
+## Scaffolding in seconds
+
+```bash
+grove new my-service
+cd my-service
+grove dev
+```
+
+The CLI wires together GORM, Fuego, and Atlas so you can focus on business logic instead of boilerplate.
+
+## Testing with gest
+
+Grove integrates with gest, a Jest-inspired testing framework for Go:
+
+```go
+func TestUserCreation(t *testing.T) {
+    gest.Describe("UserService", func() {
+        gest.It("creates a user", func() {
+            // test logic
+        })
+    })
+}
+```
+
+## Conclusion
+
+Opinionated tooling reduces decision fatigue and accelerates delivery. Grove is my answer to the question: *how should a production Go service be structured?*
