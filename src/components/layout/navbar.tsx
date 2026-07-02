@@ -47,6 +47,7 @@ export function Navbar({ avatarUrl }: NavbarProps) {
               fill
               className="object-cover"
               sizes="28px"
+              unoptimized
             />
           </div>
           <span className="font-mono text-sm text-primary">

@@ -75,6 +75,7 @@ export async function Hero() {
                 className="object-cover"
                 priority
                 sizes="112px"
+                unoptimized
               />
             </div>
           </div>
