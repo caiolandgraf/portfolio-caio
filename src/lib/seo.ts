@@ -133,7 +133,7 @@ export function createPageMetadata({
   const ogTitle = title ? `${title} | ${siteConfig.name}` : seo.title;
 
   return {
-    title: title ?? undefined,
+    ...(title ? { title } : {}),
     description: pageDescription,
     keywords: tags?.length ? [...seo.keywords, ...tags] : [...seo.keywords],
     alternates: { canonical },

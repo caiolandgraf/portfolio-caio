@@ -1,5 +1,6 @@
 export const seo = {
   title: "Caio Landgraf | Senior Software Engineer (L5), Google Cloud",
+  tabTitle: "Caio Landgraf",
   titleTemplate: "%s | Caio Landgraf",
   description:
     "Senior Software Engineer (L5) at Google Cloud specializing in Backend Engineering, Distributed Systems, Cloud Infrastructure, Laravel, Go and Artificial Intelligence.",
