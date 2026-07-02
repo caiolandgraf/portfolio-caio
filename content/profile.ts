@@ -6,8 +6,9 @@ export const profile = {
   subtitles: [
     "Backend Engineer",
     "Cloud Engineer",
-    "Laravel Specialist",
     "Go Developer",
+    "Rust Developer",
+    "Ruby Developer",
     "AI Enthusiast",
   ],
   location: "Boston, MA · Born in Brazil",

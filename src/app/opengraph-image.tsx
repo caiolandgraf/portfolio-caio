@@ -86,8 +86,16 @@ export default async function Image() {
             >
               {profile.title}
             </div>
-            <div style={{ display: "flex", gap: 20, marginTop: 6 }}>
-              {profile.subtitles.slice(0, 3).map((subtitle) => (
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 16,
+                marginTop: 6,
+                maxWidth: 720,
+              }}
+            >
+              {profile.subtitles.map((subtitle) => (
                 <span
                   key={subtitle}
                   style={{ fontSize: 20, color: SECONDARY }}
