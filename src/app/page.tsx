@@ -5,7 +5,6 @@ import { OpenSource } from "@/components/sections/open-source";
 import { BlogPreview } from "@/components/sections/blog-preview";
 import { YouTubeSection } from "@/components/sections/youtube";
 import { Talks } from "@/components/sections/talks";
-import { AnimatedTitle } from "@/components/seo/animated-title";
 import { createPageMetadata } from "@/lib/seo";
 import { seo } from "@content/seo";
 
@@ -19,7 +18,6 @@ export const revalidate = 3600;
 export default function HomePage() {
   return (
     <>
-      <AnimatedTitle />
       <Hero />
       <About />
       <Experience />
