@@ -10,7 +10,7 @@ export const profile = {
     "Go Developer",
     "AI Enthusiast",
   ],
-  location: "Brazil",
+  location: "Boston, MA · Born in Brazil",
   avatar: "/images/avatar.jpg",
   avatarFallback: "https://avatars.githubusercontent.com/u/46607462?v=4",
   resumeUrl: "/resume.pdf",

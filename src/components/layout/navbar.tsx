@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navigation, profile } from "@content/profile";
+import { Github } from "lucide-react";
+import { navigation, profile, socialLinks } from "@content/profile";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
@@ -11,6 +12,10 @@ import { cn } from "@/lib/utils";
 interface NavbarProps {
   avatarUrl: string;
 }
+
+const githubUrl =
+  socialLinks.find((link) => link.id === "github")?.href ??
+  "https://github.com/caiolandgraf";
 
 export function Navbar({ avatarUrl }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -66,8 +71,13 @@ export function Navbar({ avatarUrl }: NavbarProps) {
             ⌘K
           </kbd>
           <Button variant="outline" size="sm" asChild>
-            <Link href={profile.resumeUrl} target="_blank">
-              Resume
+            <Link
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={14} />
+              GitHub
             </Link>
           </Button>
         </div>

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { navigation, profile } from "@content/profile";
+import { navigation, profile, socialLinks } from "@content/profile";
 import {
   Dialog,
   DialogContent,
@@ -87,10 +87,16 @@ export function CommandPalette({ posts }: CommandPaletteProps) {
             <CommandGroup heading="Actions">
               <CommandItem
                 onSelect={() =>
-                  runCommand(() => window.open(profile.resumeUrl, "_blank"))
+                  runCommand(() =>
+                    window.open(
+                      socialLinks.find((link) => link.id === "github")?.href ??
+                        "https://github.com/caiolandgraf",
+                      "_blank",
+                    ),
+                  )
                 }
               >
-                Download Resume
+                Open GitHub
               </CommandItem>
             </CommandGroup>
           </CommandList>

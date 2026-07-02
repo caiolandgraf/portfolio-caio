@@ -2,8 +2,19 @@ import type { Metadata } from "next";
 import { profile } from "@content/profile";
 import { seo } from "@content/seo";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? profile.siteUrl;
+function getSiteUrl(): string {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  }
+
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return profile.siteUrl;
+}
+
+const siteUrl = getSiteUrl();
 
 export const siteConfig = {
   name: profile.name,
@@ -24,8 +35,10 @@ function absoluteUrl(path = ""): string {
   return `${siteConfig.url}${path}`;
 }
 
-function ogImageUrl(path = ""): string {
-  return absoluteUrl(path || "/opengraph-image");
+function ogImagePath(path = ""): string {
+  if (path === "/blog") return "/blog/opengraph-image";
+  if (path.startsWith("/blog/")) return `${path}/opengraph-image`;
+  return "/opengraph-image";
 }
 
 export function createRootMetadata(): Metadata {
@@ -76,7 +89,7 @@ export function createRootMetadata(): Metadata {
       description: seo.description,
       images: [
         {
-          url: ogImageUrl(),
+          url: ogImagePath(),
           width: 1200,
           height: 630,
           alt: seo.title,
@@ -89,7 +102,7 @@ export function createRootMetadata(): Metadata {
       creator: seo.twitter.handle,
       title: seo.title,
       description: seo.description,
-      images: [ogImageUrl()],
+      images: [ogImagePath()],
     },
     category: "technology",
   };
@@ -116,15 +129,7 @@ export function createPageMetadata({
 }): Metadata {
   const pageDescription = description ?? seo.description;
   const canonical = absoluteUrl(path);
-
-  let ogImagePath = "/opengraph-image";
-  if (path === "/blog") {
-    ogImagePath = "/blog/opengraph-image";
-  } else if (path.startsWith("/blog/")) {
-    ogImagePath = `${path}/opengraph-image`;
-  }
-
-  const ogImage = absoluteUrl(ogImagePath);
+  const imagePath = ogImagePath(path);
   const ogTitle = title ? `${title} | ${siteConfig.name}` : seo.title;
 
   return {
@@ -146,7 +151,7 @@ export function createPageMetadata({
       siteName: siteConfig.name,
       title: ogTitle,
       description: pageDescription,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: ogTitle }],
+      images: [{ url: imagePath, width: 1200, height: 630, alt: ogTitle }],
       ...(type === "article" && publishedTime
         ? {
             publishedTime,
@@ -162,7 +167,7 @@ export function createPageMetadata({
       creator: seo.twitter.handle,
       title: ogTitle,
       description: pageDescription,
-      images: [ogImage],
+      images: [imagePath],
     },
   };
 }
@@ -256,7 +261,7 @@ export function createArticleJsonLd({
     dateModified: date,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    image: imageUrl ?? ogImageUrl(`/blog/${slug}`),
+    image: imageUrl ?? absoluteUrl(ogImagePath(`/blog/${slug}`)),
     author: {
       "@type": "Person",
       name: author,
