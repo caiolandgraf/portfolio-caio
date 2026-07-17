@@ -2,16 +2,16 @@ import type { Metric, SocialLink } from "./types";
 
 export const profile = {
   name: "Caio Landgraf",
-  title: "Senior Software Engineer (L5), Google Cloud",
+  title: "Senior Staff+ Infrastructure Engineer, Anthropic",
   subtitles: [
-    "Backend Engineer",
-    "Cloud Engineer",
+    "Cluster Infrastructure",
+    "AI",
+    "Claude",
+    "AWS",
     "Go Developer",
     "Rust Developer",
-    "Ruby Developer",
-    "AI Enthusiast",
   ],
-  location: "Boston, MA · Born in Brazil",
+  location: "Seattle, WA · Born in Brazil",
   avatar: "/images/avatar.jpg",
   avatarFallback: "https://avatars.githubusercontent.com/u/46607462?v=4",
   resumeUrl: "/resume.pdf",
@@ -22,9 +22,11 @@ export const profile = {
       "Software engineer focused on backend systems, cloud infrastructure, and developer tooling.",
     long: `I'm a software engineer with over fourteen years of experience building backend systems, cloud infrastructure, and developer tools — since 2012. My work spans distributed systems, API design, and production-grade tooling in Go, PHP, and TypeScript.
 
-I'm the founder of EiCode, where I lead engineering for custom software solutions for clients worldwide. My open-source work includes Grove, an opinionated Go CLI for scaffolding production-ready applications, and gest, a Jest-inspired testing framework for Go.
+I'm a Senior Staff+ Infrastructure Engineer on Cluster Infrastructure at Anthropic. Previously, I was a Senior Software Engineer (L5) at Google Cloud, focused on low-level observability and backend integrations at scale.
 
-Beyond writing code, I create technical content on YouTube, contribute to the Brazilian developer community as a manager at Programadores BR, and publish articles on software architecture, clean code, and modern backend practices.
+I'm also the founder of EiCode, where I lead engineering for custom software solutions for clients worldwide. My open-source work includes Grove, an opinionated Go CLI for scaffolding production-ready applications, and gest, a Jest-inspired testing framework for Go.
+
+Beyond writing code, I create technical content on YouTube, contribute to the Brazilian developer community, and publish articles on software architecture, clean code, and modern backend practices.
 
 I'm passionate about software architecture, domain-driven design, and building systems that are simple, observable, and maintainable at scale.`,
   },

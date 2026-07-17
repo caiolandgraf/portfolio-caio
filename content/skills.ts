@@ -43,6 +43,11 @@ export const skills: SkillCategory[] = [
     skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB"],
   },
   {
+    id: "ai",
+    name: "AI",
+    skills: ["AI", "Claude", "Anthropic"],
+  },
+  {
     id: "frontend",
     name: "Frontend",
     skills: ["Vue", "React", "TailwindCSS", "Inertia"],
@@ -51,6 +56,9 @@ export const skills: SkillCategory[] = [
 
 /** Flat list shown in the hero — edit here to change what appears at the top. */
 export const heroSkills = [
+  "AI",
+  "Claude",
+  "AWS",
   "Go",
   "Rust",
   "Ruby",
@@ -61,7 +69,6 @@ export const heroSkills = [
   "DevOps",
   "Cloud Engineer",
   "GCP",
-  "AWS",
   "Docker",
   "Kubernetes",
   "PostgreSQL",

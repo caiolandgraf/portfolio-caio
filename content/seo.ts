@@ -1,11 +1,18 @@
 export const seo = {
-  title: "Caio Landgraf | Senior Software Engineer (L5), Google Cloud",
+  title:
+    "Caio Landgraf | Senior Staff+ Infrastructure Engineer, Anthropic",
   tabTitle: "Caio Landgraf",
   titleTemplate: "%s | Caio Landgraf",
   description:
-    "Senior Software Engineer (L5) at Google Cloud specializing in Backend Engineering, Distributed Systems, Cloud Infrastructure, Laravel, Go and Artificial Intelligence.",
+    "Senior Staff+ Infrastructure Engineer on Cluster Infrastructure at Anthropic. Previously Senior Software Engineer (L5) at Google Cloud, specializing in Distributed Systems, Cloud Infrastructure, Go, Rust, and AI.",
   keywords: [
     "Software Engineer",
+    "Staff Engineer",
+    "Infrastructure Engineer",
+    "Cluster Infrastructure",
+    "Anthropic",
+    "Claude",
+    "AI",
     "Backend Engineer",
     "Cloud Engineer",
     "DevOps",
@@ -40,5 +47,5 @@ export const seo = {
     handle: "@eicajo",
     site: "@eicajo",
   },
-  ogTechnologies: ["Go", "Laravel", "Cloud", "Distributed Systems", "AI"],
+  ogTechnologies: ["AI", "Claude", "AWS", "Go", "Rust"],
 } as const;

@@ -22,6 +22,8 @@ import {
   SiReact,
   SiTailwindcss,
   SiInertia,
+  SiClaude,
+  SiAnthropic,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import {
@@ -38,6 +40,8 @@ import {
   Workflow,
   Building2,
   Crown,
+  Server,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -57,6 +61,7 @@ const aliases: Record<string, string> = {
   mongo: "mongodb",
   rails: "ruby on rails",
   "software arquitecture": "software architecture",
+  "artificial intelligence": "ai",
 };
 
 const registry: Record<string, SkillVisual> = {
@@ -83,6 +88,11 @@ const registry: Record<string, SkillVisual> = {
   aws: { icon: FaAws, color: "#FF9900" },
   "google cloud": { icon: SiGooglecloud, color: "#4285F4" },
   "cloud engineer": { icon: Cloud, color: "#4285F4" },
+  cloud: { icon: Cloud, color: "#4285F4" },
+  infrastructure: { icon: Server, color: "#A1A1AA" },
+  ai: { icon: Sparkles, color: "#A78BFA" },
+  claude: { icon: SiClaude, color: "#D97757" },
+  anthropic: { icon: SiAnthropic, color: "#D4A27F" },
   devops: { icon: Workflow, color: "#2496ED" },
   docker: { icon: SiDocker, color: "#2496ED" },
   linux: { icon: SiLinux, color: "#FCC624" },

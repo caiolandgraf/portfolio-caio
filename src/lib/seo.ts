@@ -193,8 +193,8 @@ export function createPersonJsonLd(avatarUrl: string) {
     ],
     worksFor: {
       "@type": "Organization",
-      name: "Google",
-      url: "https://www.google.com",
+      name: "Anthropic",
+      url: "https://www.anthropic.com",
     },
   };
 }

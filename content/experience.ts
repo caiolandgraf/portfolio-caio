@@ -2,6 +2,32 @@ import type { Experience } from "./types";
 
 export const experience: Experience[] = [
   {
+    id: "anthropic",
+    company: "Anthropic",
+    role: "Senior Staff+ Infrastructure Engineer, Cluster Infrastructure",
+    period: "Aug 2026 — Present",
+    location: "Remote",
+    description:
+      "Senior Staff+ Infrastructure Engineer on Cluster Infrastructure at Anthropic, focused on building and operating large-scale cluster infrastructure that powers AI systems in production.",
+    highlights: [
+      "Design and evolve cluster infrastructure for reliable, high-scale AI workloads",
+      "Build systems for performance, observability, and operational excellence at scale",
+      "Collaborate across infrastructure and product teams to deliver production-ready platforms",
+    ],
+    technologies: [
+      "AI",
+      "Claude",
+      "AWS",
+      "Infrastructure",
+      "Distributed Systems",
+      "Kubernetes",
+      "Cloud",
+      "Go",
+      "Rust",
+    ],
+    current: true,
+  },
+  {
     id: "rocketseat-ambassador",
     company: "Rocketseat",
     role: "Ambassador",
@@ -21,14 +47,14 @@ export const experience: Experience[] = [
     id: "google-cloud",
     company: "Google",
     role: "Senior Software Engineer (L5), Google Cloud",
-    period: "2022 — Present",
+    period: "2022 — Jul 2026",
     location: "Remote",
     description:
-      "Senior engineer on Google Cloud, building internal applications with a focus on low-level observability and backend integration solutions for cloud infrastructure. Work spans high-performance services in Go, Rust, and Ruby, with emphasis on scalability and production reliability.",
+      "Senior engineer on Google Cloud, building internal applications with a focus on low-level observability and backend integration solutions for cloud infrastructure. Work spanned high-performance services in Go, Rust, and Ruby, with emphasis on scalability and production reliability.",
     highlights: [
-      "Develop internal tooling and services for low-level observability across cloud systems",
-      "Design and ship backend integration solutions for Google Cloud at scale",
-      "Build performance-critical services in Go, Rust, and Ruby for distributed environments",
+      "Developed internal tooling and services for low-level observability across cloud systems",
+      "Designed and shipped backend integration solutions for Google Cloud at scale",
+      "Built performance-critical services in Go, Rust, and Ruby for distributed environments",
     ],
     technologies: [
       "Go",
@@ -39,7 +65,7 @@ export const experience: Experience[] = [
       "gRPC",
       "Distributed Systems",
     ],
-    current: true,
+    current: false,
   },
   {
     id: "confidential",
